@@ -1,0 +1,5 @@
+com/ps/sre/bugtracker/service/BugService.class
+com/ps/sre/bugtracker/model/Bug.class
+com/ps/sre/bugtracker/App.class
+com/ps/sre/bugtracker/util/Cli.class
+com/ps/sre/bugtracker/service/impl/BugServiceImpl.class

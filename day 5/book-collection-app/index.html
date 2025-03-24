@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Collection App</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <h1>Book Collection</h1>
+
+        <div id="book-form">
+            <input type="text" id="title-input" placeholder="Enter book title">
+            <input type="text" id="author-input" placeholder="Enter author name">
+            <input type="text" id="genre-input" placeholder="Enter genre">
+            <button id="add-book-btn">Add Book</button>
+        </div>
+        <h3>Total Books: <span id="book-count">0</span></h3>
+        <div id="book-list"> 
+            <!-- Book list will be dynamically generated here -->
+        </div>
+    </div>
+    
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

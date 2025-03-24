@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Tutorial</title>
+</head>
+<body>
+    <h1>JavaScript Demo</h1>
+    <p id="js-text">This is my first example</p>
+    <p id="res"></p>
+
+    <script>
+        var x = "Hi, This is JavaScript tutorial";
+        console.log(x);
+        document.getElementById('js-text').innerHTML = 
+        'This is my first JavaScript example';
+
+        var a = 20;
+        var b = 30;
+        var sum = a + b;
+        document.getElementById('res').innerHTML = 'Result is :'+ sum;
+
+    //    let age = prompt('How old are you?', 100);
+    //    alert(`You are ${age} years old!`);
+    // let isBoss = confirm("Are you the boss?");
+    // alert( isBoss ); // true if OK is pressed
+
+    /*
+    My name is Nawaz, My id is XX000111
+*/
+// let id = prompt('Enter your id','');
+// let name = prompt('Enter your name','');
+// alert("My Name is:" +name+ " My id is "+id);
+
+//Type Conversion
+// let value = true;
+// alert(typeof value); // boolean
+
+// value = String(value); //
+// alert(typeof value); // string
+
+// let str = "123";
+// alert(typeof str); // string
+// let num = Number(str); // number
+// alert(typeof num); // number
+//Conditional branching
+let year = prompt("What is the current year?");
+if(year == 2025){
+    alert("You are correct");
+}else{
+    alert("You are wrong");    
+}
+
+    </script>
+</body>
+</html>
