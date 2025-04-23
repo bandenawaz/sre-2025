@@ -1,0 +1,26 @@
+.gitattributes
+.gitignore
+.git
+
+#Maven
+target/
+!target/*.jar
+mvnw
+mvnw.cmd
+.mvn/
+
+#IDE files
+.idea/
+*.iml
+out/
+.vscode/
+*.swp
+*.swo
+
+#Logs
+logs/
+*.log
+
+#OS specific
+.DS_Store
+Thumbs.db

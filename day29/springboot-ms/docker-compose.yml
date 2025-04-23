@@ -1,0 +1,72 @@
+version: '3.8'
+
+services:
+  userdb:
+    image: mysql:8
+    container_name: userdb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: userdb
+    ports:
+      - 3307:3306
+    volumes:
+      - userdb_data:/var/lib/mysql
+  sitedb:
+    image: mysql:8
+    container_name: sitedb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: sitedb
+    ports:
+      - 3308:3306
+    volumes:
+      - sitedb_data:/var/lib/mysql
+
+  organizationdb:
+    image: mysql:8
+    container_name: organizationdb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: organizationdb
+    ports:
+      - 3309:3306
+    volumes:
+      - organizationdb_data:/var/lib/mysql
+
+  user-service:
+    build:
+      context: ./user-service
+    container_name: user-service
+    restart: on-failure
+    ports:
+      - 8081:8081
+    depends_on:
+      - userdb
+
+  site-service:
+    build:
+      context: ./site-service
+    container_name: site-service
+    restart: on-failure
+    ports:
+      - 8082:8082
+    depends_on:
+      - sitedb
+
+  organization-service:
+    build:
+      context: ./organization-service
+    container_name: organization-service
+    restart: on-failure
+    ports:
+      - 8083:8083
+    depends_on:
+      - organizationdb
+
+volumes:
+  userdb_data:
+  sitedb_data:
+  organizationdb_data:
