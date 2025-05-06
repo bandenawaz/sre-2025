@@ -1,0 +1,14 @@
+- name: Install Apache Web Server
+  hosts: webservers
+  become: false
+  tasks:
+  - name: Install Apache(httpd) using homebrew
+    homebrew:
+      name: httpd
+      state: present
+  - name: Start Apache service
+    shell: brew services start httpd
+
+  - name: Ensure Apache is running
+    shell: curl http://localhost:80
+    register: result

@@ -1,0 +1,28 @@
+---
+- name: Install Nginx on webservers
+  hosts: webservers
+  become: false # No need for sudo on MacOS with Homebrew
+  tasks:
+  - name: Install Nginx on MacOS
+    when: ansible_os_family == "Darwin"
+    community.general.homebrew:
+      name: nginx
+      state: present
+
+  - name: Install Nginx on Debian/Ubuntu
+    when: ansible_os_family == "Debian"
+    apt:
+      name: nginx
+      state: present
+      update_cache: yes
+    become: true
+
+# ---
+# - name: Install Nginx on MacBook
+#   hosts: webservers
+#   become: false
+#   tasks:
+#   - name: Install Nginx
+#     community.general.homebrew:
+#       name: nginx
+#       state: present

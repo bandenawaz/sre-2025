@@ -1,0 +1,14 @@
+#Kubernetes Service file
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-k8s-app-service
+spec:
+  type: NodePort
+  selector:
+    app: my-k8s-app
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 3000
+    nodePort: 30036
